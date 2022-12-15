@@ -238,7 +238,7 @@ vcqi_to_double_plot <- function(
       select(c(level4id,text2))
   }
 
-  if (is.na(note)){
+  if (is.null(note)){
     if (VCQI_DOUBLE_IWPLOT_CITEXT == 1){
       note <- "Text at right: Point estimates from colored and from gray bars"
     }
@@ -332,7 +332,7 @@ vcqi_to_double_plot <- function(
     mutate(source = factor(source, levels = c("dat2","dat")))
 
   #DEC 15: add title etc. to the dataset
-  dat <- dat %>% mutate(graphtitle = title, graphsubtitle = subtitle, graphcaption = note)
+  combined <- combined %>% mutate(graphtitle = title, graphsubtitle = subtitle, graphcaption = note)
 
   if (!is.na(savedata)){
     saveRDS(combined, file = paste0(savedata, ".rds"))
@@ -341,10 +341,9 @@ vcqi_to_double_plot <- function(
   if (IWPLOT_SHOWBARS == 1){
     extraspace <- max(nchar(combined$text))
     group.colors <- c(dat = "#2b92be", dat2 = "lightgrey")
-    extraspace <- max(nchar(dat$text))
-    title <- dat$graphtitle[1]
-    subtitle <- dat$graphsubtitle[1]
-    note <- dat$graphcaption[1]
+    title <- combined$graphtitle[1]
+    subtitle <- combined$graphsubtitle[1]
+    note <- combined$graphcaption[1]
 
     ggplot(combined, mapping = aes(x = as.factor(rowid),y = estimate * 100,fill = source)) +
       scale_fill_manual(name = "", values = group.colors, guide = "none") +
