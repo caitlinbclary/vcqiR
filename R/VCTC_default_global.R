@@ -80,7 +80,7 @@ VCTC_default_global <- function(){
   assign("TIMELY_NOT_VXD_NOTE", 0, envir = .GlobalEnv)
 
   #The dimensions of the plot being saved, unit is inch
-  assign("TIMELY_PLOT_WIDTH",20, envir = .GlobalEnv)
+  assign("TIMELY_PLOT_WIDTH",15, envir = .GlobalEnv)
   assign("TIMELY_PLOT_HEIGHT",8, envir = .GlobalEnv)
 
   #The order of the legend
@@ -98,10 +98,10 @@ VCTC_default_global <- function(){
   assign("TIMELY_TEXTBAR_ORDER", c("COVG", "N", "NEFF", "DEFF", "ICC"), envir = .GlobalEnv)
 
   assign("TIMELY_TEXTBAR_X_COVG", 104, envir = .GlobalEnv)
-  assign("TIMELY_TEXTBAR_X_N",    117, envir = .GlobalEnv)
-  assign("TIMELY_TEXTBAR_X_NEFF", 127, envir = .GlobalEnv)
-  assign("TIMELY_TEXTBAR_X_DEFF", 137, envir = .GlobalEnv)
-  assign("TIMELY_TEXTBAR_X_ICC",  147, envir = .GlobalEnv)
+  assign("TIMELY_TEXTBAR_X_N",    110, envir = .GlobalEnv)
+  assign("TIMELY_TEXTBAR_X_NEFF", 116, envir = .GlobalEnv)
+  assign("TIMELY_TEXTBAR_X_DEFF", 122, envir = .GlobalEnv)
+  assign("TIMELY_TEXTBAR_X_ICC",  128, envir = .GlobalEnv)
 
   assign("TIMELY_TEXTBAR_LABEL_COVG", "Coverage(%)", envir = .GlobalEnv)
   assign("TIMELY_TEXTBAR_LABEL_N",    "N", envir = .GlobalEnv)
@@ -110,7 +110,7 @@ VCTC_default_global <- function(){
   assign("TIMELY_TEXTBAR_LABEL_ICC",  "ICC", envir = .GlobalEnv)
 
 
-  assign("TIMELY_XSCALE_MAX", 155, envir = .GlobalEnv)
+  assign("TIMELY_XSCALE_MAX", 134, envir = .GlobalEnv)
 
   assign("TIMELY_TEXTBAR_COLOR_COVG", "black", envir = .GlobalEnv)
   assign("TIMELY_TEXTBAR_COLOR_N",    "black", envir = .GlobalEnv)
