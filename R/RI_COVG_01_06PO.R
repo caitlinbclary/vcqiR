@@ -81,7 +81,7 @@ RI_COVG_01_06PO <- function(VCP = "RI_COVG_01_06PO"){
           barcolor1 = "#9ECAE1", # color for respondents with yvar = 1
           barcolor2 = "#f0f0f0",    # color for respondents with yvar = 0
           title = paste0(id,"-",name),
-          subtitle = paste0('"',subtitle,'"'),
+          subtitle = subtitle,
           output_to_screen = FALSE,
           filename = savepng,
           plotn = TRUE,

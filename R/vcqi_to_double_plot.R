@@ -378,13 +378,13 @@ vcqi_to_double_plot <- function(
 
     ggplot(combined, mapping = aes(x = as.factor(rowid),y = estimate * 100,fill = source)) +
       scale_fill_manual(name = "", values = group.colors, guide = "none") +
-      geom_col(position = position_dodge2(width = 0.5, preserve = "single")) +
+      geom_col(position = position_dodge2(width = 0.5, preserve = "single"),color = "#0000ff") +
       geom_linerange(aes(ymin = cill * 100, ymax = ciul * 100),
                      position = position_dodge(.9)) +
       geom_text(aes(x = as.factor(rowid),
         y = 100 + extraspace,
         label = text),
-        size = 3.25) +
+        size = 3.25,colour = "black",family = "mono") +
       coord_flip() +
       labs(y = "Estimated Coverage %",
         x = "",
@@ -395,7 +395,8 @@ vcqi_to_double_plot <- function(
       #Note: could find a better way to check the space we need for text
       scale_y_continuous(limits = c(0, 100 + 2*extraspace),
                          breaks = c(0, 25, 50, 75, 100)) +
-      theme(plot.caption = element_text(hjust = 0)) +
+      theme(plot.caption = element_text(hjust = 0),
+            axis.text.x = element_text(family = "mono", colour = "black")) +
       theme_bw()
 
     ggsave(paste0(filename,".png"),width = savew, height = saveh, units = "in")

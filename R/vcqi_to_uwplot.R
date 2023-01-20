@@ -195,10 +195,12 @@ vcqi_to_uwplot <- function(
     }
 
     ggplot(dat, aes(x = as.factor(rowid), y = estimate * 100)) +
-      geom_col(fill = "#2b92be") +
+      geom_col(fill = "#2b92be",color = "#0000ff") +
       geom_text(aes(x = as.factor(rowid),
                     y = 100 + extraspace,
-                    label = text)) +
+                    label = text),
+                colour = "black",
+                family = "mono") +
       coord_flip() +
       labs(y = "Sample Proportion %",
            x = "",
@@ -208,7 +210,8 @@ vcqi_to_uwplot <- function(
       #Note: could find a better way to check the space we need for text
       scale_y_continuous(limits = c(0, 100 + 1.75*extraspace),
                          breaks = c(0, 25, 50, 75, 100)) +
-      theme(plot.caption = element_text(hjust = 0))+
+      theme(plot.caption = element_text(hjust = 0),
+            axis.text.x = element_text(family = "mono", colour = "black"))+
       theme_bw()
 
     ggsave(paste0(filename,".png"),width = savew, height = saveh, units = "in")
