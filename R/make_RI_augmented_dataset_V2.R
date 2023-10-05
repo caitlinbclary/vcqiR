@@ -180,7 +180,8 @@ make_RI_augmented_dataset_v2 <- function(outpath = NA, analysiscounter = 10){
 
   keep <- c("level1id","level2id","level3id", VCQI_LEVEL4_SET_VARLIST)
 
-  dat2 <- vcqi_read(paste0(VCQI_OUTPUT_FOLDER, "/RI_with_ids.rds")) %>% select(all_of(keep),RI01,RI03,RI11,RI12,respid,stratumid,clusterid)
+  dat2 <- vcqi_read(paste0(VCQI_OUTPUT_FOLDER, "/RI_with_ids.rds")) %>%
+    select(all_of(keep),RI01,RI03,RI11,RI12,respid,stratumid,clusterid,psweight)
   dupname <- names(dat2)[which(names(dat2) %in% names(dat))]
   dupname <- dupname[which(!dupname %in% c("RI01", "RI03", "RI11", "RI12"))]
   dat2 <- dat2 %>% select(-c(all_of(dupname)))
