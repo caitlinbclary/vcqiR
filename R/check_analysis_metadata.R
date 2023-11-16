@@ -39,7 +39,7 @@
 # 2023-02-07  1.12      Mia Yu          Added part for customized level4 Excel cell formats
 # 2023-07-29  1.13      Mia Yu          Remove HH14 from missing value check
 # 2023-10-03  1.14      Mia Yu          Move vcqi_multi_lingual_strings inside this program
-# 2023-11-15  1.15      Mia Yu          Add format columns to default level4_layout
+# 2023-11-15  1.15      Mia Yu          Add format columns to default settings for level4_layout
 # *******************************************************************************
 
 # Note: sections of this program that check FMTID are not implemented (2022-10-07)
