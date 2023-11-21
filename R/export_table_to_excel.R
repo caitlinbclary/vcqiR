@@ -153,7 +153,7 @@ export_table_to_excel <- function(indicator, tablename = NULL, sheet = NULL, bri
   setColWidths(wb, sheet = 1, cols = 1, widths = 25)
 
   # *************************************************
-  # Now go through each row to overwrite with any costumized style
+  # Now go through each row to overwrite with any customized style
   if (use_basic_fmtids == 0){
     for (l in 1:nrow(cellformat)){
 

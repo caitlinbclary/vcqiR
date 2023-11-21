@@ -778,7 +778,9 @@ check_analysis_metadata <- function(VCP = "check_analysis_metadata"){
           if (!(all(level4_layout$fmtid_for_first_column_r == "" |
                     is.na(level4_layout$fmtid_for_first_column_r) |
                     is.null(level4_layout$fmtid_for_first_column_r) |
-                    level4_layout$fmtid_for_first_column_r == "regular_left"))){
+                    level4_layout$fmtid_for_first_column_r %in%
+                    c("regular_left","regular_right","shaded_left","shaded_right",
+                      "italic_left","italic_right","bold_left","bold_right","italic_left_indented3")))){
             notempty <- 1
           }
         }
@@ -787,7 +789,9 @@ check_analysis_metadata <- function(VCP = "check_analysis_metadata"){
           if (!(all(level4_layout$fmtid_for_other_columns_r == "" |
                     is.na(level4_layout$fmtid_for_other_columns_r) |
                     is.null(level4_layout$fmtid_for_other_columns_r) |
-                    level4_layout$fmtid_for_other_columns_r == "regular_right"))){
+                    level4_layout$fmtid_for_other_columns_r %in%
+                    c("regular_left","regular_right","shaded_left","shaded_right",
+                      "italic_left","italic_right","bold_left","bold_right","italic_left_indented3")))){
             notempty <- 1
           }
         }
@@ -808,6 +812,20 @@ check_analysis_metadata <- function(VCP = "check_analysis_metadata"){
                          "A separate user-defined file with format ids for VCQI_LEVEL4_SET_LAYOUT was not provided; VCQI will have access to the default formats from function vcqi_basic_fmtids")
           vcqi_log_comment(VCP,2,"Warning",
                            "A separate user-defined file with format ids for VCQI_LEVEL4_SET_LAYOUT was not provided; VCQI will have access to the default formats from function vcqi_basic_fmtids")
+
+          if (!(all(level4_layout$fmtid_for_other_columns_r == "" |
+                    is.na(level4_layout$fmtid_for_other_columns_r) |
+                    is.null(level4_layout$fmtid_for_other_columns_r) |
+                    level4_layout$fmtid_for_other_columns_r %in% "regular_left"))) {
+            assign("use_basic_fmtids",0, envir = .GlobalEnv)
+          }
+
+          if (!(all(level4_layout$fmtid_for_other_columns_r == "" |
+                    is.na(level4_layout$fmtid_for_other_columns_r) |
+                    is.null(level4_layout$fmtid_for_other_columns_r) |
+                    level4_layout$fmtid_for_other_columns_r %in% "regular_right"))){
+            assign("use_basic_fmtids",0, envir = .GlobalEnv)
+          }
         }
       } #end of if FMTIDS not defined
 
