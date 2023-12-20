@@ -64,7 +64,9 @@ cleanup_VCQI_globals <- function(){
     "suppress_cis",
     "TIMELY_ABBREV_CAPTION_LINE1",
     "TO_DESC_02_CN",
-    "TO_DESC_03_CN"
+    "TO_DESC_03_CN",
+    "language_use",
+    "OUTPUT_LANGUAGE"
   ), envir = .GlobalEnv) %>% suppressWarnings()
 
   # Remove VCQI objects by pattern:
