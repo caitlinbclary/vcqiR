@@ -40,6 +40,10 @@ opplot(
   linecolorhigh2 = "gray",
   linecolormid2 = "gray",
   linecolorlow2 = "gray",
+  lowcovgthresholdline = FALSE,
+  highcovgthresholdline = FALSE,
+  lowcovgthresholdlinecolor = "red",
+  highcovgthresholdlinecolor = "red",
   output_to_screen = FALSE,
   filename = NA_character_,
   platform = "png",
@@ -125,6 +129,14 @@ opplot(
 \item{linecolormid2}{Valid R color or hex color used to mark boundaries between the upper portion of the bars in the middle coverage category; should have good contrast with barcolormid2}
 
 \item{linecolorlow2}{Valid R color or hex color used to mark boundaries between the upper portion of the bars in the low coverage category; should have good contrast with barcolorlow2}
+
+\item{lowcovgthresholdline}{Show line indicating low coverage threshold (lowcovgthreshold)}
+
+\item{highcovgthresholdline}{Show line indicating high coverage threshold (highcovgthreshold)}
+
+\item{lowcovgthresholdlinecolor}{Valid R color or hex color for line indicating low coverage threshold (lowcovgthreshold)}
+
+\item{highcovgthresholdlinecolor}{Valid R color or hex color for line indicating high coverage threshold (highcovgthreshold)}
 
 \item{output_to_screen}{Show the plot in plot window or not, default to be FALSE}
 
